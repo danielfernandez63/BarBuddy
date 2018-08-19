@@ -207,14 +207,24 @@
     <Compile Include="Startup.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Images\Bar1.jpg" />
+    <Content Include="Images\bar2.png" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\bootstrapYeti.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="Images\bar3.jpg" />
+    <Content Include="Images\bar4.jpg" />
+    <Content Include="Images\Bbackground.png" />
+    <Content Include="Images\black-linen.png" />
+    <Content Include="Images\black-twill.png" />
+    <Content Include="Images\Halo.png" />
+    <Content Include="Images\RD.PNG" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="ApplicationInsights.config">
