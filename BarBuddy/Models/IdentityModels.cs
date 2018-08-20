@@ -26,8 +26,16 @@ namespace BarBuddy.Models
         }
 
         public static ApplicationDbContext Create()
-        {
+        {    
             return new ApplicationDbContext();
         }
+
+        public DbSet<Manager> Managers { get; set; }
+        public DbSet<Bartender> Bartenders { get; set; }
+        public DbSet<Inventory> Inventory { get; set; }
+        public DbSet<Recipe> Recipe { get; set; }
+        public DbSet<Restaurant> Restaurants { get; set; }
+        public DbSet<Tab> Tabs { get; set; }
+        public DbSet<Vodka> Vodkas { get; set; }
     }
 }

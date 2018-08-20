@@ -20,7 +20,10 @@ namespace BarBuddy.Models
         [Display(Name = "Amount in Stock")]
         public double Stock { get; set; }
 
-        [Display(Name = "Bottle Size")]
+        [Display(Name = "Brand")]
+        public string Brand { get; set; }
+
+        [Display(Name = "Bottle Size in ML")]
         public double BottleSize { get; set; }
 
         [Display(Name = "Bottle Price")]

@@ -13,12 +13,12 @@ namespace BarBuddy.Models
         public int RecipeId { get; set; }
 
         [ForeignKey("Restaurant")]
-        public int? ResturantId { get; set; }
+        public int? RestaurantId { get; set; }
         public Restaurant Restaurant { get; set; }
 
-        [ForeignKey("Tab")]
-        public int? TabId { get; set; }
-        public Tab Tab { get; set; }
+        //[ForeignKey("Tab")]
+        //public int? TabId { get; set; }
+        //public Tab Tab { get; set; }
 
         [Display(Name = "Liquor Type in Recipe")]
         public string Type { get; set; }

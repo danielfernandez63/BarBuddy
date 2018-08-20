@@ -11,9 +11,7 @@ namespace BarBuddy.Models
         [Key]
         public int RestaurantId { get; set; }
 
-
         [Display(Name = "Restaurant Total Balance")]
         public double Balance { get; set; }
-
     }
 }

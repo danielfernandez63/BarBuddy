@@ -12,15 +12,13 @@ namespace BarBuddy.Models
         [Key]
         public int WorkerId { get; set; }
 
-
         [ForeignKey("ApplicationUser")]
         public string ApplicationUserId { get; set; }
         public ApplicationUser ApplicationUser { get; set; }
 
         [ForeignKey("Restaurant")]
-        public int? ResturantId { get; set; }
+        public int? RestaurantId { get; set; }
         public Restaurant Restaurant { get; set; }
-
 
         [ForeignKey("Tab")]
         public int? TabId { get; set; }
