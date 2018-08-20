@@ -17,7 +17,7 @@ namespace BarBuddy.Models
         public ApplicationUser ApplicationUser { get; set; }
 
         [ForeignKey("Restaurant")]
-        public int? ResturantId { get; set; }
+        public int? RestaurantId { get; set; }
         public Restaurant Restaurant { get; set; }
 
         [Display(Name = "First Name")]

@@ -208,6 +208,14 @@
     <Compile Include="Migrations\201808201959538_AddedModelForRestuarant.Designer.cs">
       <DependentUpon>201808201959538_AddedModelForRestuarant.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201808202119335_FixedFewErrorsInOriginalModels.cs" />
+    <Compile Include="Migrations\201808202119335_FixedFewErrorsInOriginalModels.Designer.cs">
+      <DependentUpon>201808202119335_FixedFewErrorsInOriginalModels.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201808202120401_SeedingDatabase.cs" />
+    <Compile Include="Migrations\201808202120401_SeedingDatabase.Designer.cs">
+      <DependentUpon>201808202120401_SeedingDatabase.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Bartender.cs" />
@@ -315,6 +323,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201808201959538_AddedModelForRestuarant.resx">
       <DependentUpon>201808201959538_AddedModelForRestuarant.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201808202119335_FixedFewErrorsInOriginalModels.resx">
+      <DependentUpon>201808202119335_FixedFewErrorsInOriginalModels.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201808202120401_SeedingDatabase.resx">
+      <DependentUpon>201808202120401_SeedingDatabase.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
