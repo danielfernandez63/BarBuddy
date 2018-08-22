@@ -224,6 +224,10 @@
     <Compile Include="Migrations\201808210237489_finishedSeeding.Designer.cs">
       <DependentUpon>201808210237489_finishedSeeding.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201808221706432_FixedModels.cs" />
+    <Compile Include="Migrations\201808221706432_FixedModels.Designer.cs">
+      <DependentUpon>201808221706432_FixedModels.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Bartender.cs" />
@@ -358,6 +362,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201808210237489_finishedSeeding.resx">
       <DependentUpon>201808210237489_finishedSeeding.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201808221706432_FixedModels.resx">
+      <DependentUpon>201808221706432_FixedModels.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

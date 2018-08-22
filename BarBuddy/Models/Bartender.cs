@@ -41,7 +41,5 @@ namespace BarBuddy.Models
         [Display(Name = "Daily Till")]
         public double DailyTill { get; set; }
 
-
-
     }
 }

@@ -13,5 +13,8 @@ namespace BarBuddy.Models
 
         [Display(Name = "Restaurant Total Balance")]
         public double Balance { get; set; }
+
+        [Display(Name = "Restaurant Name")]
+        public string Name { get; set; }
     }
 }

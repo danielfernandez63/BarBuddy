@@ -41,7 +41,7 @@ namespace BarBuddy.Controllers
         public ActionResult Create()
         {
 
-            ViewBag.RestaurantId = new SelectList(db.Restaurants, "RestaurantId", "RestaurantId");
+            ViewBag.RestaurantId = new SelectList(db.Restaurants, "RestaurantId", "Name");
             ViewBag.ManagerId = new SelectList(db.Managers, "ManagerId", "FirstName");
             return View();
         }
@@ -76,7 +76,7 @@ namespace BarBuddy.Controllers
             {
                 return HttpNotFound();
             }
-            ViewBag.RestaurantId = new SelectList(db.Restaurants, "RestaurantId", "RestaurantId");
+            ViewBag.RestaurantId = new SelectList(db.Restaurants, "RestaurantId", "Name");
             ViewBag.ManagerId = new SelectList(db.Managers, "ManagerId", "FirstName");
             ViewBag.ApplicationUserId = new SelectList(db.Users, "UserId", "UserId");
             return View(recipe);
@@ -107,6 +107,8 @@ namespace BarBuddy.Controllers
                 recipeEdit.Amount = recipe.Amount;
                 recipeEdit.Description = recipe.Description;
                 recipeEdit.Price = recipe.Price;
+                recipeEdit.IsSeasonal = recipe.IsSeasonal;
+                recipeEdit.ReducedFromInventory = recipe.ReducedFromInventory;
               
 
                 db.Entry(recipeEdit).State = EntityState.Modified;

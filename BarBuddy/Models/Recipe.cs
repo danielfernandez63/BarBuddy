@@ -20,13 +20,11 @@ namespace BarBuddy.Models
         //public int? TabId { get; set; }
         //public Tab Tab { get; set; }
 
-
         [Display(Name = "Drink Name")]
         public string Name { get; set; }
 
         [Display(Name = "Drink Description")]
         public string Description { get; set; }
-
 
         [Display(Name = "Liquor Type in Recipe")]
         public string Type { get; set; }
@@ -36,6 +34,12 @@ namespace BarBuddy.Models
 
         [Display(Name = "Drink Order Price")]
         public double Price { get; set; }
+
+        [Display(Name = "Reduced From Inventory")]
+        public double ReducedFromInventory { get; set; }
+
+        [Display(Name = "Seasonal Item")]
+        public bool IsSeasonal { get; set; }
 
     }
 }

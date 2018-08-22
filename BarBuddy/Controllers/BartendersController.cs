@@ -55,7 +55,7 @@ namespace BarBuddy.Controllers
         public ActionResult Create()
         {
         
-            ViewBag.RestaurantId = new SelectList(db.Restaurants, "RestaurantId", "RestaurantId");
+            ViewBag.RestaurantId = new SelectList(db.Restaurants, "RestaurantId", "Name");
             ViewBag.ManagerId = new SelectList(db.Managers, "ManagerId", "FirstName");
             return View();
         }
@@ -75,7 +75,7 @@ namespace BarBuddy.Controllers
                 return RedirectToAction("Index");
             }
 
-            ViewBag.RestaurantId = new SelectList(db.Restaurants, "RestaurantId", "RestaurantId");
+            ViewBag.RestaurantId = new SelectList(db.Restaurants, "RestaurantId", "Name");
             ViewBag.ManagerId = new SelectList(db.Managers, "ManagerId", "FirstName");
 
             return View(bartender);
@@ -93,7 +93,7 @@ namespace BarBuddy.Controllers
             {
                 return HttpNotFound();
             }
-            ViewBag.RestaurantId = new SelectList(db.Restaurants, "RestaurantId", "RestaurantId");
+            ViewBag.RestaurantId = new SelectList(db.Restaurants, "RestaurantId", "Name");
             ViewBag.ManagerId = new SelectList(db.Managers, "ManagerId", "FirstName");
             ViewBag.ApplicationUserId = new SelectList(db.Users, "UserId", "UserId");
             return View(bartender);

@@ -3,6 +3,7 @@
 
 <body style="background-image: url('/Images/Halo.png');">
     <h2>Create New Recipe</h2>
+    <br />
 
 
     @using (Html.BeginForm())
@@ -46,6 +47,22 @@
         </div>
 
         <div class="form-group">
+            @Html.LabelFor(model => model.Price, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Price, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Price, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        <h4>Check if the item is seasonal.</h4>
+        <div class="form-group">
+            @Html.LabelFor(model => model.IsSeasonal, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.IsSeasonal, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.IsSeasonal, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        <h4>Please remember that for each ounce in recipe, you need to deduct 0.025 from inventory.</h4>
+        <div class="form-group">
             @Html.LabelFor(model => model.Amount, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
                 @Html.EditorFor(model => model.Amount, new { htmlAttributes = new { @class = "form-control" } })
@@ -54,10 +71,10 @@
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.Price, htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.LabelFor(model => model.ReducedFromInventory, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.Price, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.Price, "", new { @class = "text-danger" })
+                @Html.EditorFor(model => model.ReducedFromInventory, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.ReducedFromInventory, "", new { @class = "text-danger" })
             </div>
         </div>
 
