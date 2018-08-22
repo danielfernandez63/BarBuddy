@@ -20,6 +20,11 @@ namespace BarBuddy.Controllers
             return View();
         }
 
+        public ActionResult Home()
+        {
+            return View();
+        }
+
         // GET: Customers/Details/5
         public ActionResult Details(int? id)
         {

@@ -31,7 +31,7 @@ namespace BarBuddy.Models
         [Display(Name = "Liquor Type in Recipe")]
         public string Type { get; set; }
 
-        [Display(Name = "Quantity in Recipe")]
+        [Display(Name = "Quantity in Recipe in Ounces")]
         public double Amount { get; set; }
 
         [Display(Name = "Drink Order Price")]

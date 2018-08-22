@@ -1,0 +1,31 @@
+﻿@model IEnumerable<BarBuddy.Models.Manager>
+
+@{
+    ViewBag.Title = "Manager Home";
+}
+
+<body style="background-image: url('/Images/Halo.png');">
+    <h2>Manager Hub</h2>
+    <br />
+    <br />
+    <br />
+
+    <div class="col-md-4">
+        <h3>Inventory Management Hub</h3>
+        <p>Manage inventory or check for audits here.</p>
+        <p><a class="btn btn-default" href="@Url.Action("Index","Bartenders")">Inventory &raquo;</a></p>
+    </div>
+
+    <div class="col-md-4">
+        <h3>Employee Management Hub</h3>
+        Manage your workforce, edit employee information, or add new employees.
+        <p><a class="btn btn-default" href="@Url.Action("Index","Bartenders")">Employees  &raquo;</a></p>
+    </div>
+
+    <div class="col-md-4">
+        <h3>Recipe Management Screen</h3>
+        <p>Make the restaurant yours by adding reginonal or special recipes here. </p>
+        <p><a class="btn btn-default"href="@Url.Action("Index","Recipes")">Recipes &raquo;</a></p>
+    </div>
+
+    </body>

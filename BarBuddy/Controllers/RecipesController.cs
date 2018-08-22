@@ -17,7 +17,8 @@ namespace BarBuddy.Controllers
         // GET: Manager
         public ActionResult Index()
         {
-            return View();
+            var recipes = db.Recipe.Include(m => m.Restaurant);
+            return View(recipes.ToList());
         }
 
         // GET: Customers/Details/5
@@ -39,8 +40,9 @@ namespace BarBuddy.Controllers
         // GET: Customers/Create
         public ActionResult Create()
         {
-            //ViewBag.ZipCodeId = new SelectList(db.ZipCodes, "ZipCodeId", "ZipCodeArea");
 
+            ViewBag.RestaurantId = new SelectList(db.Restaurants, "RestaurantId", "RestaurantId");
+            ViewBag.ManagerId = new SelectList(db.Managers, "ManagerId", "FirstName");
             return View();
         }
 
@@ -53,7 +55,6 @@ namespace BarBuddy.Controllers
         {
             if (ModelState.IsValid)
             {
-                
                 db.Recipe.Add(recipe);
                 db.SaveChanges();
                 return RedirectToAction("Index");
@@ -75,7 +76,9 @@ namespace BarBuddy.Controllers
             {
                 return HttpNotFound();
             }
-
+            ViewBag.RestaurantId = new SelectList(db.Restaurants, "RestaurantId", "RestaurantId");
+            ViewBag.ManagerId = new SelectList(db.Managers, "ManagerId", "FirstName");
+            ViewBag.ApplicationUserId = new SelectList(db.Users, "UserId", "UserId");
             return View(recipe);
         }
 
@@ -89,13 +92,32 @@ namespace BarBuddy.Controllers
             if (ModelState.IsValid)
             {
            
-                db.Entry(recipe).State = EntityState.Modified;
+                //db.Entry(recipe).State = EntityState.Modified;
+                //db.SaveChanges();
+                //return RedirectToAction("Index");
+
+                int workingId = recipe.RecipeId;
+
+
+                var recipeEdit = db.Recipe.Where(ord => ord.RecipeId == workingId).Single();
+
+                recipeEdit.Name = recipe.Name;
+                recipeEdit.Description = recipe.Description;
+                recipeEdit.Type = recipe.Type;
+                recipeEdit.Amount = recipe.Amount;
+                recipeEdit.Description = recipe.Description;
+                recipeEdit.Price = recipe.Price;
+              
+
+                db.Entry(recipeEdit).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");
+
             }
 
             return View(recipe);
         }
+
 
         // GET: Customers/Delete/5
         public ActionResult Delete(int? id)

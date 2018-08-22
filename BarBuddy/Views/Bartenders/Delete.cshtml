@@ -3,86 +3,90 @@
 @{
     ViewBag.Title = "Delete";
 }
+<body style="background-image: url('/Images/Halo.png');">
 
-<h2>Delete</h2>
 
-<h3>Are you sure you want to delete this?</h3>
-<div>
-    <h4>Bartender</h4>
-    <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.ApplicationUserId)
-        </dt>
+    <h2>Delete</h2>
 
-        <dd>
-            @Html.DisplayFor(model => model.ApplicationUserId)
-        </dd>
+    <h3>Are you sure you want to delete this?</h3>
+    <div>
+        <h4>Bartender</h4>
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.ApplicationUserId)
+            </dt>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.RestaurantId)
-        </dt>
+            <dd>
+                @Html.DisplayFor(model => model.ApplicationUserId)
+            </dd>
 
-        <dd>
-            @Html.DisplayFor(model => model.RestaurantId)
-        </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.RestaurantId)
+            </dt>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.TabId)
-        </dt>
+            <dd>
+                @Html.DisplayFor(model => model.RestaurantId)
+            </dd>
 
-        <dd>
-            @Html.DisplayFor(model => model.TabId)
-        </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.TabId)
+            </dt>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.ManagerId)
-        </dt>
+            <dd>
+                @Html.DisplayFor(model => model.TabId)
+            </dd>
 
-        <dd>
-            @Html.DisplayFor(model => model.ManagerId)
-        </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.ManagerId)
+            </dt>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.FirstName)
-        </dt>
+            <dd>
+                @Html.DisplayFor(model => model.ManagerId)
+            </dd>
 
-        <dd>
-            @Html.DisplayFor(model => model.FirstName)
-        </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.FirstName)
+            </dt>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.LastName)
-        </dt>
+            <dd>
+                @Html.DisplayFor(model => model.FirstName)
+            </dd>
 
-        <dd>
-            @Html.DisplayFor(model => model.LastName)
-        </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.LastName)
+            </dt>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.PhoneNumber)
-        </dt>
+            <dd>
+                @Html.DisplayFor(model => model.LastName)
+            </dd>
 
-        <dd>
-            @Html.DisplayFor(model => model.PhoneNumber)
-        </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.PhoneNumber)
+            </dt>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.DailyTill)
-        </dt>
+            <dd>
+                @Html.DisplayFor(model => model.PhoneNumber)
+            </dd>
 
-        <dd>
-            @Html.DisplayFor(model => model.DailyTill)
-        </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.DailyTill)
+            </dt>
 
-    </dl>
+            <dd>
+                @Html.DisplayFor(model => model.DailyTill)
+            </dd>
 
-    @using (Html.BeginForm()) {
-        @Html.AntiForgeryToken()
+        </dl>
 
-        <div class="form-actions no-color">
-            <input type="submit" value="Delete" class="btn btn-default" /> |
-            @Html.ActionLink("Back to List", "Index")
-        </div>
-    }
-</div>
+        @using (Html.BeginForm())
+        {
+            @Html.AntiForgeryToken()
+
+            <div class="form-actions no-color">
+                <input type="submit" value="Delete" class="btn btn-default" /> |
+                @Html.ActionLink("Back to List", "Index")
+            </div>
+        }
+    </div>
+    </body>

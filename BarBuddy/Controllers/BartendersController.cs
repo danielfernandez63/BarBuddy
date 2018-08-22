@@ -17,6 +17,18 @@ namespace BarBuddy.Controllers
         // GET: Manager
         public ActionResult Index()
         {
+            var user = User.Identity.GetUserId();
+         
+
+            ViewBag.displaymenu = "Yes";
+      
+            var bartenders = db.Bartenders.Include(m => m.Tab);
+            return View(bartenders.ToList());
+         
+        }
+
+        public ActionResult BartenderHome()
+        {
             return View();
         }
 
@@ -42,8 +54,9 @@ namespace BarBuddy.Controllers
         // GET: Customers/Create
         public ActionResult Create()
         {
-            //ViewBag.ZipCodeId = new SelectList(db.ZipCodes, "ZipCodeId", "ZipCodeArea");
-
+        
+            ViewBag.RestaurantId = new SelectList(db.Restaurants, "RestaurantId", "RestaurantId");
+            ViewBag.ManagerId = new SelectList(db.Managers, "ManagerId", "FirstName");
             return View();
         }
 
@@ -62,6 +75,8 @@ namespace BarBuddy.Controllers
                 return RedirectToAction("Index");
             }
 
+            ViewBag.RestaurantId = new SelectList(db.Restaurants, "RestaurantId", "RestaurantId");
+            ViewBag.ManagerId = new SelectList(db.Managers, "ManagerId", "FirstName");
 
             return View(bartender);
         }
@@ -78,7 +93,9 @@ namespace BarBuddy.Controllers
             {
                 return HttpNotFound();
             }
-
+            ViewBag.RestaurantId = new SelectList(db.Restaurants, "RestaurantId", "RestaurantId");
+            ViewBag.ManagerId = new SelectList(db.Managers, "ManagerId", "FirstName");
+            ViewBag.ApplicationUserId = new SelectList(db.Users, "UserId", "UserId");
             return View(bartender);
         }
 
@@ -91,15 +108,25 @@ namespace BarBuddy.Controllers
         {
             if (ModelState.IsValid)
             {
-                var user = User.Identity.GetUserId();
-                var loggedInCustomer = db.Bartenders.Where(e => e.ApplicationUserId == user).Single();
+                //var user = User.Identity.GetUserId();
+                //var loggedInCustomer = db.Bartenders.Where(e => e.ApplicationUserId == user).Single();
 
                 //loggedInCustomer.FirstName = customer.FirstName;
 
+                int workingId = bartender.WorkerId;
 
-                db.Entry(loggedInCustomer).State = EntityState.Modified;
+
+                var BartenderEdit = db.Bartenders.Where(ord => ord.WorkerId == workingId).Single();
+
+                BartenderEdit.FirstName = bartender.FirstName;
+                BartenderEdit.LastName = bartender.LastName;
+                BartenderEdit.PhoneNumber = bartender.PhoneNumber;
+                BartenderEdit.ManagerId = bartender.ManagerId;
+                BartenderEdit.RestaurantId = bartender.RestaurantId;
+
+                db.Entry(BartenderEdit).State = EntityState.Modified;
                 db.SaveChanges();
-                return RedirectToAction("Details");
+                return RedirectToAction("Index");
             }
 
             return View(bartender);
