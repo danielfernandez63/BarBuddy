@@ -55,7 +55,28 @@ namespace BarBuddy.Controllers
             {
                 db.TabRecipes.Add(tabRecipes);
                 db.SaveChanges();
-                return RedirectToAction("Index");
+
+
+                var recipeItem = tabRecipes.RecipeId;
+                var tabItem = tabRecipes.TabId;     
+                
+                var tab = db.Tabs.Where(ord => ord.TabId == tabItem).Single();
+                var recipe = db.Recipe.Where(ord => ord.RecipeId == recipeItem).Single();
+
+                tab.Total += recipe.Price;
+                db.Entry(tab).State = EntityState.Modified;
+                db.SaveChanges();
+
+                var alcoholType = recipe.InventoryId;
+                var alcoholAmount = recipe.ReducedFromInventory;
+                var inventoryObject = db.Inventory.Where(itm => itm.InventoryId == alcoholType).Single();
+                inventoryObject.Stock -= alcoholAmount;
+                db.Entry(inventoryObject).State = EntityState.Modified;
+                db.SaveChanges();
+
+
+
+                return RedirectToAction("Index", "Tabs");
             }
 
             ViewBag.RecipeId = new SelectList(db.Recipe, "RecipeId", "Name", tabRecipes.RecipeId);

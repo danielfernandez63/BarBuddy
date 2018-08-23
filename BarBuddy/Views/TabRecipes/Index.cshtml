@@ -1,15 +1,17 @@
 ﻿@model IEnumerable<BarBuddy.Models.TabRecipes>
 
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Tab Tracker";
 }
 <body style="background-image: url('/Images/Halo.png');">
 
-    <h2>Index</h2>
-
     <p>
-        @Html.ActionLink("Create New", "Create")
+        @Html.ActionLink("Update Order", "Create")
     </p>
+    <p>
+        @Html.ActionLink("Tabs", "Index","Tabs")
+    </p>
+    <p>Below Are the customers and drinks ordered per customer</p>
     <table class="table">
         <tr>
             <th>
@@ -32,11 +34,10 @@
                 </td>
                 <td>
                     @Html.ActionLink("Edit", "Edit", new { id = item.TabRecipe }) |
-                    @Html.ActionLink("Details", "Details", new { id = item.TabRecipe }) |
                     @Html.ActionLink("Delete", "Delete", new { id = item.TabRecipe })
                 </td>
             </tr>
         }
 
     </table>
-    </body>
+</body>

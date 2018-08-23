@@ -375,6 +375,9 @@
     <Content Include="Views\Inventories\IndexBar.cshtml" />
     <Content Include="Views\Bartenders\Details.cshtml" />
     <Content Include="Views\Tabs\Details.cshtml" />
+    <Content Include="Views\Tabs\IndexAllOrders.cshtml" />
+    <Content Include="Views\Tabs\Checkout.cshtml" />
+    <Content Include="Views\Tabs\Payment.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

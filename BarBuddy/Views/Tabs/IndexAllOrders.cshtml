@@ -6,15 +6,15 @@
 <body style="background-image: url('/Images/Halo.png');">
     <br />
 
-    <h2>Active Orders</h2>
+    <h2>Active Tables</h2>
 
     <p>
-        @Html.ActionLink("Create New Customer Order", "Create")
+        @Html.ActionLink("Create New Order", "Create")
     </p>
     <table class="table">
         <tr>
             <th>
-              <p> Assigned Worker Name</p>
+                @Html.DisplayNameFor(model => model.Bartender.ApplicationUserId)
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.Total)
@@ -23,7 +23,7 @@
                 @Html.DisplayNameFor(model => model.Name)
             </th>
             <th>
-                <p> Check Out Completed</p>
+                @Html.DisplayNameFor(model => model.CheckOut)
             </th>
             <th></th>
         </tr>
@@ -32,7 +32,7 @@
         {
             <tr>
                 <td>
-                    @Html.DisplayFor(modelItem => item.Bartender.FirstName)
+                    @Html.DisplayFor(modelItem => item.Bartender.ApplicationUserId)
                 </td>
                 <td>
                     @Html.DisplayFor(modelItem => item.Total)
@@ -44,10 +44,9 @@
                     @Html.DisplayFor(modelItem => item.CheckOut)
                 </td>
                 <td>
-                    @Html.ActionLink("Change Customer Information", "Edit", new { id = item.TabId }) |
-                    @Html.ActionLink("Delete Order", "Delete", new { id = item.TabId })|
-                    @Html.ActionLink("Check Out Customer", "Checkout", new { id = item.TabId })|
-                    @Html.ActionLink("Add Drink", "Create", "TabRecipes")
+                    @Html.ActionLink("Edit", "Edit", new { id = item.TabId }) |
+                    @Html.ActionLink("Details", "Details", new { id = item.TabId }) |
+                    @Html.ActionLink("Delete", "Delete", new { id = item.TabId })
                 </td>
             </tr>
         }
