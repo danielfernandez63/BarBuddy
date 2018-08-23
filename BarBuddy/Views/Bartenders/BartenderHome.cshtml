@@ -7,5 +7,22 @@
 
     <h2>BarTendingHome</h2>
 
+    <div class="col-md-4">
+        <h3>Inventory Management Hub</h3>
+        <p>Go to inventory main page and audit or view</p>
+        <p><a class="btn btn-default" href="@Url.Action("IndexBar","Inventories")">Inventory &raquo;</a></p>
+    </div>
 
-    </body>
+    <div class="col-md-4">
+        <h3>Employee Account Management Hub</h3>
+        Manage your account.
+        <p><a class="btn btn-default" href="@Url.Action("Details","Bartenders")">Employees  &raquo;</a></p>
+    </div>
+
+    <div class="col-md-4">
+        <h3>Work Tasks</h3>
+        <p>Manage orders and daily tasks here </p>
+        <p><a class="btn btn-default" href="@Url.Action("Index","Tabs")">Recipes &raquo;</a></p>
+    </div>
+
+</body>

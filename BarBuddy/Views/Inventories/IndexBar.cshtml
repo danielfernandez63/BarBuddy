@@ -3,8 +3,9 @@
 
 <h2>Current Inventory</h2>
 <body style="background-image: url('/Images/Halo.png');">
+
     <p>
-        @Html.ActionLink("Add New Item To Inventory", "Create")
+        @Html.ActionLink("Return", "BartenderHome", "Bartenders")
     </p>
     <table class="table">
         <tr>
@@ -44,12 +45,9 @@
                 <td>
                     @Html.DisplayFor(modelItem => item.Price)
                 </td>
-                <td>
-                    @Html.ActionLink("Edit Inventory", "Edit", new { id = item.InventoryId }) &nbsp;
-                    @Html.ActionLink("Delete Item", "Delete", new { id = item.InventoryId })
-                </td>
+
             </tr>
         }
 
     </table>
-    </body>`
+</body>`

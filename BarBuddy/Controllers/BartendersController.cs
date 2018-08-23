@@ -35,20 +35,19 @@ namespace BarBuddy.Controllers
         // GET: Customers/Details/5
         public ActionResult Details(int? id)
         {
-            //var user = User.Identity.GetUserId();      
-            //var loggedInUser = db.Customers.Include(g => g.ZipCode).Include(v => v.PickUpDay).Where(c => c.ApplicationUserId == user).Single();
-
-
-            if (id == null)
+            var user = User.Identity.GetUserId();
+            var loggedInUser = db.Bartenders.Include(wrk => wrk.Restaurant).Include(grt => grt.Manager).Where(c => c.ApplicationUserId == user).Single();
+                          
+            if (loggedInUser == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Bartender bartender = db.Bartenders.Find(id);
-            if (bartender == null)
+            //Bartender bartender = db.Bartenders.Find(id);
+            if (loggedInUser == null)
             {
                 return HttpNotFound();
             }
-            return View(bartender);
+            return View(loggedInUser);
         }
 
         // GET: Customers/Create

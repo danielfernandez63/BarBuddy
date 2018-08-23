@@ -1,0 +1,47 @@
+﻿@model BarBuddy.Models.Bartender
+
+<body style="background-image: url('/Images/Halo.png');">
+ 
+
+    <div>
+        <h4>Your Imformation</h4>
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.FirstName)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.FirstName)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.LastName)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.LastName)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.PhoneNumber)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.PhoneNumber)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.DailyTill)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.DailyTill)
+            </dd>
+
+        </dl>
+    </div>
+    <p>
+        @Html.ActionLink("Return", "BartenderHome", "Bartenders")
+    </p>
+    </body>

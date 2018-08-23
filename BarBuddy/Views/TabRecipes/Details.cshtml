@@ -3,32 +3,34 @@
 @{
     ViewBag.Title = "Details";
 }
+<body style="background-image: url('/Images/Halo.png');">
 
-<h2>Details</h2>
+    <h2>Details</h2>
 
-<div>
-    <h4>TabRecipes</h4>
-    <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.Recipe.Name)
-        </dt>
+    <div>
+        <h4>TabRecipes</h4>
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.Recipe.Name)
+            </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.Recipe.Name)
-        </dd>
+            <dd>
+                @Html.DisplayFor(model => model.Recipe.Name)
+            </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Tab.Name)
-        </dt>
+            <dt>
+                @Html.DisplayNameFor(model => model.Tab.Name)
+            </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.Tab.Name)
-        </dd>
+            <dd>
+                @Html.DisplayFor(model => model.Tab.Name)
+            </dd>
 
-    </dl>
-</div>
-<p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.TabRecipe }) |
-    @Html.ActionLink("Back to List", "Index")
-</p>
+        </dl>
+    </div>
+    <p>
+        @Html.ActionLink("Edit", "Edit", new { id = Model.TabRecipe }) |
+        @Html.ActionLink("Back to List", "Index")
+    </p>
+    </body>

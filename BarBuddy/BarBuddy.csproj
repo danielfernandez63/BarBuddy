@@ -372,6 +372,9 @@
     <Content Include="Views\TabRecipes\Details.cshtml" />
     <Content Include="Views\TabRecipes\Edit.cshtml" />
     <Content Include="Views\TabRecipes\Index.cshtml" />
+    <Content Include="Views\Inventories\IndexBar.cshtml" />
+    <Content Include="Views\Bartenders\Details.cshtml" />
+    <Content Include="Views\Tabs\Details.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

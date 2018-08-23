@@ -3,37 +3,40 @@
 @{
     ViewBag.Title = "Index";
 }
+<body style="background-image: url('/Images/Halo.png');">
 
-<h2>Index</h2>
+    <h2>Index</h2>
 
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.Recipe.Name)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Tab.Name)
-        </th>
-        <th></th>
-    </tr>
+    <p>
+        @Html.ActionLink("Create New", "Create")
+    </p>
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Recipe.Name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Tab.Name)
+            </th>
+            <th></th>
+        </tr>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.Recipe.Name)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Tab.Name)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.TabRecipe }) |
-            @Html.ActionLink("Details", "Details", new { id=item.TabRecipe }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.TabRecipe })
-        </td>
-    </tr>
-}
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Recipe.Name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Tab.Name)
+                </td>
+                <td>
+                    @Html.ActionLink("Edit", "Edit", new { id = item.TabRecipe }) |
+                    @Html.ActionLink("Details", "Details", new { id = item.TabRecipe }) |
+                    @Html.ActionLink("Delete", "Delete", new { id = item.TabRecipe })
+                </td>
+            </tr>
+        }
 
-</table>
+    </table>
+    </body>

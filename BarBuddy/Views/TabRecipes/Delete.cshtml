@@ -3,38 +3,41 @@
 @{
     ViewBag.Title = "Delete";
 }
+<body style="background-image: url('/Images/Halo.png');">
 
-<h2>Delete</h2>
+    <h2>Delete</h2>
 
-<h3>Are you sure you want to delete this?</h3>
-<div>
-    <h4>TabRecipes</h4>
-    <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.Recipe.Name)
-        </dt>
+    <h3>Are you sure you want to delete this?</h3>
+    <div>
+        <h4>TabRecipes</h4>
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.Recipe.Name)
+            </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.Recipe.Name)
-        </dd>
+            <dd>
+                @Html.DisplayFor(model => model.Recipe.Name)
+            </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Tab.Name)
-        </dt>
+            <dt>
+                @Html.DisplayNameFor(model => model.Tab.Name)
+            </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.Tab.Name)
-        </dd>
+            <dd>
+                @Html.DisplayFor(model => model.Tab.Name)
+            </dd>
 
-    </dl>
+        </dl>
 
-    @using (Html.BeginForm()) {
-        @Html.AntiForgeryToken()
+        @using (Html.BeginForm())
+        {
+            @Html.AntiForgeryToken()
 
-        <div class="form-actions no-color">
-            <input type="submit" value="Delete" class="btn btn-default" /> |
-            @Html.ActionLink("Back to List", "Index")
-        </div>
-    }
-</div>
+            <div class="form-actions no-color">
+                <input type="submit" value="Delete" class="btn btn-default" /> |
+                @Html.ActionLink("Back to List", "Index")
+            </div>
+        }
+    </div>
+    </body>

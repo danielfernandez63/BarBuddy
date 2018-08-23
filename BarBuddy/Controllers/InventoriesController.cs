@@ -21,6 +21,12 @@ namespace BarBuddy.Controllers
             return View(inventory.ToList());
         }
 
+        public ActionResult IndexBar()
+        {
+            var inventory = db.Inventory.Include(i => i.Restaurant);
+            return View(inventory.ToList());
+        }
+
         // GET: Inventories/Details/5
         public ActionResult Details(int? id)
         {

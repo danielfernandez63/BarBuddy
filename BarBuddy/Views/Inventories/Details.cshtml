@@ -3,56 +3,57 @@
 @{
     ViewBag.Title = "Details";
 }
+<body style="background-image: url('/Images/Halo.png');">
+    <h2>Details</h2>
 
-<h2>Details</h2>
+    <div>
+        <h4>Inventory</h4>
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.Restaurant.Name)
+            </dt>
 
-<div>
-    <h4>Inventory</h4>
-    <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.Restaurant.Name)
-        </dt>
+            <dd>
+                @Html.DisplayFor(model => model.Restaurant.Name)
+            </dd>
 
-        <dd>
-            @Html.DisplayFor(model => model.Restaurant.Name)
-        </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.Type)
+            </dt>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Type)
-        </dt>
+            <dd>
+                @Html.DisplayFor(model => model.Type)
+            </dd>
 
-        <dd>
-            @Html.DisplayFor(model => model.Type)
-        </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.Stock)
+            </dt>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Stock)
-        </dt>
+            <dd>
+                @Html.DisplayFor(model => model.Stock)
+            </dd>
 
-        <dd>
-            @Html.DisplayFor(model => model.Stock)
-        </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.BottleSize)
+            </dt>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.BottleSize)
-        </dt>
+            <dd>
+                @Html.DisplayFor(model => model.BottleSize)
+            </dd>
 
-        <dd>
-            @Html.DisplayFor(model => model.BottleSize)
-        </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.Price)
+            </dt>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Price)
-        </dt>
+            <dd>
+                @Html.DisplayFor(model => model.Price)
+            </dd>
 
-        <dd>
-            @Html.DisplayFor(model => model.Price)
-        </dd>
-
-    </dl>
-</div>
-<p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.InventoryId }) |
-    @Html.ActionLink("Back to List", "Index")
-</p>
+        </dl>
+    </div>
+    <p>
+        @Html.ActionLink("Edit", "Edit", new { id = Model.InventoryId }) |
+        @Html.ActionLink("Back to List", "Index")
+    </p>
+    </body>
