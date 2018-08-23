@@ -197,10 +197,13 @@
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\BartendersController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\InventoriesController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\ManagerController.cs" />
     <Compile Include="Controllers\RecipesController.cs" />
+    <Compile Include="Controllers\TabRecipesController.cs" />
     <Compile Include="Controllers\TabsController.cs" />
+    <Compile Include="Controllers\TabsScaffController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -354,6 +357,21 @@
     <Content Include="Views\Tabs\Delete.cshtml" />
     <Content Include="Views\Manager\Home.cshtml" />
     <Content Include="Views\Bartenders\BartenderHome.cshtml" />
+    <Content Include="Views\Inventories\Create.cshtml" />
+    <Content Include="Views\Inventories\Delete.cshtml" />
+    <Content Include="Views\Inventories\Details.cshtml" />
+    <Content Include="Views\Inventories\Edit.cshtml" />
+    <Content Include="Views\Inventories\Index.cshtml" />
+    <Content Include="Views\TabsScaff\Create.cshtml" />
+    <Content Include="Views\TabsScaff\Delete.cshtml" />
+    <Content Include="Views\TabsScaff\Details.cshtml" />
+    <Content Include="Views\TabsScaff\Edit.cshtml" />
+    <Content Include="Views\TabsScaff\Index.cshtml" />
+    <Content Include="Views\TabRecipes\Create.cshtml" />
+    <Content Include="Views\TabRecipes\Delete.cshtml" />
+    <Content Include="Views\TabRecipes\Details.cshtml" />
+    <Content Include="Views\TabRecipes\Edit.cshtml" />
+    <Content Include="Views\TabRecipes\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
