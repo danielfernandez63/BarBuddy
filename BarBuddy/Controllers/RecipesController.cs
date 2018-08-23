@@ -17,7 +17,7 @@ namespace BarBuddy.Controllers
         // GET: Manager
         public ActionResult Index()
         {
-            var recipes = db.Recipe.Include(m => m.Restaurant);
+            var recipes = db.Recipe.Include(m => m.Restaurant).OrderBy(r => r.IsSeasonal);
             return View(recipes.ToList());
         }
 

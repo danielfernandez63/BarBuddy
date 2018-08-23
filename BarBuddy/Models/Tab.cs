@@ -19,7 +19,18 @@ namespace BarBuddy.Models
         [Display(Name = "Tab Total")]
         public double Total { get; set; }
 
+
+        [Display(Name = "Customer Name")]
+        public string Name { get; set; }
+
         [Display(Name = "Check Out Completed")]
         public bool CheckOut { get; set; }
+
+        [ForeignKey("Bartender")]
+        public int? WorkerId { get; set; }
+        public Bartender Bartender { get; set; }
+        
+        public IEnumerable<Recipe> TabItems { get; set; }
+
     }
 }

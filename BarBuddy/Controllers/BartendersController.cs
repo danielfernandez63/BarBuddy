@@ -22,7 +22,7 @@ namespace BarBuddy.Controllers
 
             ViewBag.displaymenu = "Yes";
       
-            var bartenders = db.Bartenders.Include(m => m.Tab);
+            var bartenders = db.Bartenders.Include(m => m.Restaurant);
             return View(bartenders.ToList());
          
         }

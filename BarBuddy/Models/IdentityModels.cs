@@ -37,5 +37,6 @@ namespace BarBuddy.Models
         public DbSet<Restaurant> Restaurants { get; set; }
         public DbSet<Tab> Tabs { get; set; }
         public DbSet<Vodka> Vodkas { get; set; }
+        public DbSet<TabRecipes> TabRecipes { get; set; }
     }
 }

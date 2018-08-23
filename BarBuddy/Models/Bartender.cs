@@ -20,9 +20,9 @@ namespace BarBuddy.Models
         public int? RestaurantId { get; set; }
         public Restaurant Restaurant { get; set; }
 
-        [ForeignKey("Tab")]
-        public int? TabId { get; set; }
-        public Tab Tab { get; set; }
+        //[ForeignKey("Tab")]
+        //public int? TabId { get; set; }
+        //public Tab Tab { get; set; }
 
         [ForeignKey("Manager")]
         [Display(Name = "My manager")]

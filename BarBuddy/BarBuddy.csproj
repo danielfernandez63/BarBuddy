@@ -228,6 +228,30 @@
     <Compile Include="Migrations\201808221706432_FixedModels.Designer.cs">
       <DependentUpon>201808221706432_FixedModels.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201808222037293_ChangeEntireInventoryTrackingSystem.cs" />
+    <Compile Include="Migrations\201808222037293_ChangeEntireInventoryTrackingSystem.Designer.cs">
+      <DependentUpon>201808222037293_ChangeEntireInventoryTrackingSystem.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201808222044129_TestInventory.cs" />
+    <Compile Include="Migrations\201808222044129_TestInventory.Designer.cs">
+      <DependentUpon>201808222044129_TestInventory.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201808222051019_test.cs" />
+    <Compile Include="Migrations\201808222051019_test.Designer.cs">
+      <DependentUpon>201808222051019_test.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201808222053197_test2.cs" />
+    <Compile Include="Migrations\201808222053197_test2.Designer.cs">
+      <DependentUpon>201808222053197_test2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201808230128359_NewInventory.cs" />
+    <Compile Include="Migrations\201808230128359_NewInventory.Designer.cs">
+      <DependentUpon>201808230128359_NewInventory.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201808230144224_AddJunctionTable.cs" />
+    <Compile Include="Migrations\201808230144224_AddJunctionTable.Designer.cs">
+      <DependentUpon>201808230144224_AddJunctionTable.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Bartender.cs" />
@@ -365,6 +389,24 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201808221706432_FixedModels.resx">
       <DependentUpon>201808221706432_FixedModels.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201808222037293_ChangeEntireInventoryTrackingSystem.resx">
+      <DependentUpon>201808222037293_ChangeEntireInventoryTrackingSystem.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201808222044129_TestInventory.resx">
+      <DependentUpon>201808222044129_TestInventory.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201808222051019_test.resx">
+      <DependentUpon>201808222051019_test.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201808222053197_test2.resx">
+      <DependentUpon>201808222053197_test2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201808230128359_NewInventory.resx">
+      <DependentUpon>201808230128359_NewInventory.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201808230144224_AddJunctionTable.resx">
+      <DependentUpon>201808230144224_AddJunctionTable.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

@@ -20,13 +20,17 @@ namespace BarBuddy.Models
         //public int? TabId { get; set; }
         //public Tab Tab { get; set; }
 
+        [ForeignKey("Inventory")]
+        public int? InventoryId { get; set; }
+        public Inventory Inventory { get; set; }
+
         [Display(Name = "Drink Name")]
         public string Name { get; set; }
 
         [Display(Name = "Drink Description")]
         public string Description { get; set; }
 
-        [Display(Name = "Liquor Type in Recipe")]
+        [Display(Name = "Extra to delete")]
         public string Type { get; set; }
 
         [Display(Name = "Quantity in Recipe in Ounces")]
