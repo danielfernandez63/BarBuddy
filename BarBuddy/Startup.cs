@@ -12,12 +12,12 @@ namespace BarBuddy
         public void Configuration(IAppBuilder app)
         {
             ConfigureAuth(app);
-            createRolesAndUsers();
+            CreateRolesAndUsers();
         }
 
 
 
-        private void createRolesAndUsers()
+        private void CreateRolesAndUsers()
         {
             ApplicationDbContext context = new ApplicationDbContext();
 
@@ -26,13 +26,17 @@ namespace BarBuddy
 
             if (!RoleManager.RoleExists("Admin"))
             {
-                var role = new Microsoft.AspNet.Identity.EntityFramework.IdentityRole();
-                role.Name = "Admin";
+                var role = new Microsoft.AspNet.Identity.EntityFramework.IdentityRole
+                {
+                    Name = "Admin"
+                };
                 RoleManager.Create(role);
 
-                var user = new ApplicationUser();
-                user.UserName = "BruceBanner";
-                user.Email = "danmanfernan@gmail.com";
+                var user = new ApplicationUser
+                {
+                    UserName = "BruceBanner",
+                    Email = "danmanfernan@gmail.com"
+                };
 
                 string userPWD = "D3vC0d3$tud3nt";
 
@@ -46,16 +50,20 @@ namespace BarBuddy
 
             if (!RoleManager.RoleExists("Manager"))
             {
-                var role = new Microsoft.AspNet.Identity.EntityFramework.IdentityRole();
-                role.Name = "Manager";
+                var role = new Microsoft.AspNet.Identity.EntityFramework.IdentityRole
+                {
+                    Name = "Manager"
+                };
                 RoleManager.Create(role);
             }
 
 
             if (!RoleManager.RoleExists("Bartender"))
             {
-                var role = new Microsoft.AspNet.Identity.EntityFramework.IdentityRole();
-                role.Name = "Bartender";
+                var role = new Microsoft.AspNet.Identity.EntityFramework.IdentityRole
+                {
+                    Name = "Bartender"
+                };
                 RoleManager.Create(role);
             }
 
