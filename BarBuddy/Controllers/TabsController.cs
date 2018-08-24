@@ -23,6 +23,12 @@ namespace BarBuddy.Controllers
             return View(tabs.ToList());
         }
 
+        public ActionResult IndexAllOrdersOnlyActive()
+        {
+            var tabs = db.Tabs.Include(t => t.Bartender).Where(tbs=> tbs.CheckOut == false);
+            return View(tabs.ToList());
+        }
+
         // GET: Manager
         public ActionResult Payment()
         {
@@ -113,7 +119,7 @@ namespace BarBuddy.Controllers
 
                 db.Entry(tabEdit).State = EntityState.Modified;
                 db.SaveChanges();
-                return RedirectToAction("Index");
+                return RedirectToAction("IndexAllOrdersOnlyActive");
             }
             ViewBag.WorkerId = new SelectList(db.Bartenders, "WorkerId", "FirstName");
             return View(tab);
@@ -265,7 +271,7 @@ namespace BarBuddy.Controllers
             Tab tab = db.Tabs.Find(id);
             db.Tabs.Remove(tab);
             db.SaveChanges();
-            return RedirectToAction("Index");
+            return RedirectToAction("IndexAllOrdersOnlyActive");
         }
 
         protected override void Dispose(bool disposing)

@@ -4,16 +4,16 @@
 <body style="background-image: url('/Images/Halo.png');">
     <br />
 
-    <h2>All Orders</h2>
+    <h2>Active Orders</h2>
 
     <p>
         @Html.ActionLink("Create New Customer Order", "Create")
-        @Html.ActionLink("See Only Active Orders", "IndexAllOrdersOnlyActive")
+        @Html.ActionLink("All Orders", "Index")
     </p>
     <table class="table">
         <tr>
             <th>
-              <p> Assigned Worker Name</p>
+                <p> Assigned Worker Name</p>
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.Total)

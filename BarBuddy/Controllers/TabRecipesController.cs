@@ -76,7 +76,7 @@ namespace BarBuddy.Controllers
 
 
 
-                return RedirectToAction("Index", "Tabs");
+                return RedirectToAction("IndexAllOrdersOnlyActive", "Tabs");
             }
 
             ViewBag.RecipeId = new SelectList(db.Recipe, "RecipeId", "Name", tabRecipes.RecipeId);

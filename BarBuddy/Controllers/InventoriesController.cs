@@ -27,6 +27,17 @@ namespace BarBuddy.Controllers
             return View(inventory.ToList());
         }
 
+        public ActionResult Notify(int? id)
+        {
+            var inventoryItem = db.Inventory.Where(whr => whr.InventoryId == id).Single();
+
+            string alcohol = inventoryItem.Type;
+
+
+            TwilioNotification.NotifyManagementInventory(alcohol);
+            return View();
+        }
+
         // GET: Inventories/Details/5
         public ActionResult Details(int? id)
         {

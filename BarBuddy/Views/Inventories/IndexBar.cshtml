@@ -46,10 +46,10 @@
                     @Html.DisplayFor(modelItem => item.Price)
                 </td>
                 <td>
-                    @Html.ActionLink("Notify Management Low Stock", "Notification", new { id = item.InventoryId })
+                    @Html.ActionLink("Notify Management Low Stock", "Notify", new { id = item.InventoryId })
                 </td>
             </tr>
         }
 
     </table>
-</body>`
+</body>
