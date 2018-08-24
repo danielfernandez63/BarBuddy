@@ -383,6 +383,8 @@
     <Content Include="Views\Tabs\IndexAllOrders.cshtml" />
     <Content Include="Views\Tabs\Checkout.cshtml" />
     <Content Include="Views\Tabs\Payment.cshtml" />
+    <Content Include="Views\Tabs\Charge.cshtml" />
+    <Content Include="Views\Inventories\Notify.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

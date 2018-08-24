@@ -1,0 +1,30 @@
+﻿@{
+    ViewBag.Title = "Charge";
+}
+<script type="text/javascript" src="https://js.stripe.com/v2/"></script>
+<body style="background-image: url('/Images/Halo.png');">
+
+    <br>
+    <h4>Charge Screen</h4>
+    <br />
+    <br />
+
+    <form action="/Tabs/Payment" method="POST">
+        <article>
+            <label>
+                Amount To be Charged: &nbsp; "@ViewBag.StripeCost"
+            </label>
+        </article>
+        <br />
+        <br />
+
+        <script src="https://checkout.stripe.com/v2/checkout.js"
+                class="stripe-button"
+                data-key="@ViewBag.StripePublishKey"
+                data-locale="auto"
+                data-description="Bar Total"
+                data-amount="@ViewBag.StripeCost">
+
+        </script>
+    </form>
+    </body>

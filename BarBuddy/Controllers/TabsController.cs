@@ -1,5 +1,6 @@
 ﻿using BarBuddy.Models;
 using Microsoft.AspNet.Identity;
+using Stripe;
 using System;
 using System.Collections.Generic;
 using System.Data.Entity;
@@ -7,6 +8,7 @@ using System.Linq;
 using System.Net;
 using System.Web;
 using System.Web.Mvc;
+using System.Web.Routing;
 
 namespace BarBuddy.Controllers
 {
@@ -166,16 +168,82 @@ namespace BarBuddy.Controllers
                     db.Entry(rest).State = EntityState.Modified;
                     db.SaveChanges();
 
+                    var passedCost = (restaurantItem * 100);
+                    int stripeCost = Convert.ToInt32(passedCost);
 
-                    return RedirectToAction("Payment");
+                    return RedirectToAction("Charge", new RouteValueDictionary(new { controller = "Tabs", action = "Charge", stripeCost }));
                 }
             }
             ViewBag.WorkerId = new SelectList(db.Bartenders, "WorkerId", "FirstName");
             return View(tab);
         }
 
-        // GET: TabsScaff/Delete/5
-        public ActionResult Delete(int? id)
+
+        //StripeCharging
+
+        public ActionResult Charge(int stripeCost)
+        {
+            StripeConfiguration.SetApiKey("sk_test_CAtwmaT2le5Vw7iJfk9FlBSp");          
+            var stripePublishKey ="pk_test_BkWKjB5Ie1Y51YhuFGt0OC5R";
+
+            int AmountStripe = stripeCost / 100;
+
+            ViewBag.AmountStripe = AmountStripe;
+            ViewBag.StripePublishKey = stripePublishKey;
+            ViewBag.StripeCost = stripeCost;
+            return View();
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Charge(string stripeEmail, string stripeToken, int stripeCost)
+        {
+            var user = User.Identity.GetUserId();
+            var loggedInUser = db.Bartenders.Where(c => c.ApplicationUserId == user).Single();
+
+            int cost = stripeCost;
+
+
+            var customers = new StripeCustomerService();
+            var charges = new StripeChargeService();
+
+            var customer = customers.Create(new StripeCustomerCreateOptions
+            {
+                Email = stripeEmail,
+                SourceToken = stripeToken
+            });
+
+            var charge = charges.Create(new StripeChargeCreateOptions
+            {
+                Amount = cost,//charge in cents
+                Description = "Tab For Bar",
+                Currency = "usd",
+                CustomerId = customer.Id
+            });
+        
+            return RedirectToAction("Tabs", "Payment", "Tabs");
+        }
+
+
+
+        //{ controller = "Tabs", action = "Charge", stripeCost  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    // GET: TabsScaff/Delete/5
+    public ActionResult Delete(int? id)
         {
             if (id == null)
             {

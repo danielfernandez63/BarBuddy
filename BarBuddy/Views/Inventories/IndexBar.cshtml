@@ -16,7 +16,7 @@
                 @Html.DisplayNameFor(model => model.Type)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Stock)
+               <p>Amount in Stock For Restaurant</p>
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.BottleSize)
@@ -45,7 +45,9 @@
                 <td>
                     @Html.DisplayFor(modelItem => item.Price)
                 </td>
-
+                <td>
+                    @Html.ActionLink("Notify Management Low Stock", "Notification", new { id = item.InventoryId })
+                </td>
             </tr>
         }
 
